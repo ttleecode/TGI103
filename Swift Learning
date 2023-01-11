@@ -103,3 +103,73 @@ case 1000...4999:
 default:
     print("Just stay home")
 }
+
+//array
+var book1 = "Tools of Titans"
+var book2 = "Rework"
+var book3 = "Your Move"
+var bookCollection = ["Tool of Titans", "Rework", "Your Move"]
+bookCollection[0]
+bookCollection.append("Authority")       //using .append to add new objects into array
+bookCollection.count                     //using .count to check numbers of objects into array
+
+//print out objects in array
+print(bookCollection[0])
+print(bookCollection[1])
+print(bookCollection[2])
+print(bookCollection[3])
+//efficient way using for in loop
+for index in 0...3 {
+    print(bookCollection[index])
+}
+//or
+for index in 0...bookCollection.count - 1 {
+    print(bookCollection[index])
+}
+//or
+for book in bookCollection {
+    print(book)
+}
+
+//dictionary
+var bookCollectionDict = ["1328683788": "Tool of Titans", "0307463745": "Rework", "1612060919": "Authority"]
+bookCollectionDict["0307463745"]
+//print all keys and values
+for (key, value) in bookCollectionDict {
+    print("ISBN: \(key)")
+    print("Title: \(value)")
+}
+//the output will not be ordered cause type is dictionary
+
+//emoji
+var emojiDict: [String : String] = [ "👻" : "ghost",
+                                     "🛩️" : "airplane",
+                                     "🤩" : "happy" ]// 填入初始化字典的程式 //
+
+var wordToLookup = "👻"                 //emoji key
+var meaning = emojiDict[wordToLookup]   //add find dir
+
+wordToLookup = "🛩️"                     //emoji key
+meaning = emojiDict[wordToLookup]       //add find dir
+//print(meaning)
+    //warning (yellow) :Expression implicitly coerced from 'String?' to 'Any'
+    //result :"Optional("airplane")\n"
+    //Optional happen when app tries to load a variable without value
+//using ? to set one variable type to optional (can be no value included)
+var jobTitle: String?        //result :nil
+
+//to pass optional
+//using if
+jobTitle = "iOS development"
+//var message = "Your job title is " + jobTitle
+    //error :Value of optional type 'String?' must be unwrapped to a value of type 'String' //because have optional type variable
+if jobTitle != nil {
+    var message = "Your job title is " + jobTitle!
+    print(message)
+}
+
+//using if let
+if let jobTitle = jobTitle {
+    var message = "Your job title is " + jobTitle
+    print(message)
+}
