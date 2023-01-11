@@ -1,0 +1,105 @@
+//to run coding, command + shift + enter
+//to run individualy, press play botton on left side of code
+
+import UIKit
+
+var greeting = "Hello, playground"
+
+//let to define one constant
+//var to define one variable
+let constantA = 10
+var numberA = 10
+var resultA = constantA + numberA
+
+//constant value can't be changed
+//constant = 50
+//but variable value can be changed
+numberA = 20
+
+//add Int infront define value as integer
+let constantB: Int = 10
+var numberB: Int = 10
+var resultB: Int = numberB + constantB
+
+//use option botton to check types of variables
+//types
+    //Int - integer
+    //Double - float
+    //String - string
+    //Bool - boolean
+var constantC = 10 //constantC is a integer
+var numberC = 10.5 //numberC is a double (float)
+
+//string
+var messageA = "The best way to learn Swift is to stop talking and code"
+
+//string operator - +
+var greetingA = "Hello "
+var nameTim = "Tim"
+var greetingMessage = greetingA + nameTim
+
+//all words uppercase or lowercase
+//using uppercase and lowercase
+greetingMessage.uppercased()
+greetingMessage.lowercased()
+
+//count words
+greetingMessage.count
+
+//string operator - *
+var bookPrice = 30
+var bookSales = 5
+var totalEarning = bookPrice * bookSales
+
+//var totalEarningMessage = "Your total earning of books is $" + totalEarning
+    //appear "Binary operator '+' cannot be applied to operands of type 'String' and 'Int'"
+    //swift can not using different types of variables with operators
+    //try changing all variables into string
+var totalEarningMessageA = "Your total earning of books is $" + String(totalEarning)
+//string interpolations
+    //will do the same from above
+var totalEarningMessageB = "Your total earning of books is $\(totalEarning)"
+
+//if then else
+//ex1
+var timeYouWakeUp = 6
+
+if timeYouWakeUp == 6 {
+    print("Cook yourself a big breakfast!")
+} else {
+    print("Go out for breakfast")
+}
+//ex1 using switch
+var timeYouWakeUpA = 6
+
+switch timeYouWakeUpA {
+case 6:
+    print("Cook yourself a big breakfast!")
+default:
+    print("Go out for breakfast")
+}
+//ex2
+var bonusA = 5000
+
+if bonusA >= 10000 {
+    print("I will travel to Paris and London!")
+} else if bonusA >= 5000 && bonusA < 10000 {         //define two operator using &&
+    print("I will travel to Tokyo")
+} else if bonusA >= 1000 && bonusA < 5000 {
+    print("I will travel to Bangkok")
+} else {
+    print("Just stay home")
+}
+//ex2 using switch
+var bonusB = 5000
+
+switch bonusB {
+case 10000...:
+    print("I will travel to Paris and London!")
+case 5000...9999:
+    print("I will travel to Tokyo")
+case 1000...4999:
+    print("I will travel to Bangkok")
+default:
+    print("Just stay home")
+}
